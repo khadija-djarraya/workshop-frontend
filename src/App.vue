@@ -49,7 +49,10 @@ export default {
     async deleteMovie(id){
       alert("delete movie "+id);
       const res= await axios.delete("http://localhost:3000/movies/"+id);
-      this.refreshMovies();
+
+      if(res.data.ack){
+        this.refreshMovies();
+      }
     },
     async refreshMovies(){
       const res= await axios.get("http://localhost:3000/movies/");
