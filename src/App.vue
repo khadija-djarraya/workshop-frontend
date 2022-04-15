@@ -37,7 +37,8 @@ export default {
     const res= await axios.get("http://localhost:3000/movies");
     //"await" waits until it is done. it is only used in async funcs only.
     //put line 37 in a variable, always do that when you don't know the content of a line.
-    console.log("finished mounting.",res);
+    console.log("finished mounting.",res.data);
+    this.movies=res.data;
   }
 };
 </script>
